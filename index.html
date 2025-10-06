@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BRiNSPOT — Free Music PR Submission Network</title>
+  <meta name="description" content="Submit your music, EPK, and interview for free to hundreds of verified magazines, blogs, and media outlets through BRiNSPOT — the artist-first PR platform." />
+  <meta name="author" content="BRiNSPOT" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <style>
+    :root{
+      --bg:#0b0f1a; --card:#101622; --muted:#94a3b8; --accent:#3b82f6; --glass: rgba(255,255,255,0.05);
+      --max:1200px; --radius:14px; --light:rgba(255,255,255,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#070a16 0%, #0a0f20 60%), var(--bg); color:#e6eef8; scroll-behavior:smooth;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:40px auto; padding:36px}
+
+    /* HEADER */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#06b6d4);font-weight:800;box-shadow:0 6px 30px rgba(0,0,0,0.6);color:white}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{background:var(--accent);padding:10px 14px;border-radius:10px;font-weight:600;color:white;border:none;cursor:pointer;transition:0.3s}
+    .btn:hover{opacity:0.9}
+    .tiny{font-size:13px;color:var(--muted)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:32px;border-radius:18px;box-shadow:0 8px 40px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
+    h1{font-size:36px;margin:0 0 8px}
+    p.lead{color:var(--muted); margin:0 0 18px;font-size:18px;line-height:1.6}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .pill{background:var(--glass);padding:8px 10px;border-radius:10px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* SECTIONS */
+    .section{margin-top:60px}
+    .section h2{font-size:28px;margin-bottom:12px}
+    .section p{color:var(--muted);line-height:1.6}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid var(--light)}
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* MEDIA GRID */
+    .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-top:16px;text-align:center}
+    .logo-tile{background:var(--glass);padding:14px;border-radius:10px;font-weight:600;color:#cbd5e1;opacity:0.8}
+    .logo-tile:hover{opacity:1;background:var(--light)}
+
+    /* FORM SECTION */
+    .submit{background:linear-gradient(180deg, rgba(59,130,246,0.12), rgba(6,182,212,0.04));padding:18px;border-radius:12px;border:1px solid rgba(59,130,246,0.12)}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .cards{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      .container{padding:18px}
+    }
+
+    footer{margin-top:40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">BR</div>
+        <div>
+          <div style="font-weight:800;font-size:18px;">BRiNSPOT</div>
+          <div class="tiny">Free Music PR • Global Media Outreach</div>
+        </div>
+      </div>
+      <nav>
+        <a class="tiny" href="#how">How It Works</a>
+        <a class="tiny" href="#partners">Media Network</a>
+        <button class="btn" onclick="document.getElementById('interviewForm').scrollIntoView({behavior: 'smooth'});">Submit your music</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Submit Once. Get Seen Everywhere.</h1>
+        <p class="lead">BRiNSPOT is a free artist PR platform that delivers your EPK, interview, and latest release to verified music editors, magazines, playlists, and online media — including <strong>Indiefferential, Rolling Stone Indie, EARMILK, Notion, OnesToWatch</strong> and many more.</p>
+        <div class="features">
+          <div class="pill">Free PR Submission</div>
+          <div class="pill">Global Media Network</div>
+          <div class="pill">Real Editors & Curators</div>
+          <div class="pill">Print & Digital Features</div>
+        </div>
+      </div>
+
+      <aside id="interviewForm">
+        <div class="submit hero-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div style="font-weight:800">Submit Your EPK & Interview</div>
+            <div class="muted">Free submission — verified outreach</div>
+          </div>
+
+          <!-- Google Form Embed -->
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxdyK9taTIXRBFS7W5HJ1W5361Mm7RPyje5nCrRNiJAmzYbg/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+          <div style="margin-top:12px" class="tiny">Once your submission is reviewed and approved, you’ll receive an <strong>email confirmation</strong> from our editorial team before it’s sent out to media partners.</div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section">
+      <h2>How It Works</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>1. Submit for Free</h3>
+          <p class="muted">Fill out one simple form with your bio, release details, and EPK. No signup or fees required.</p>
+        </div>
+        <div class="card">
+          <h3>2. We Pitch to Media</h3>
+          <p class="muted">Our PR editors send your story to hundreds of active journalists, blogs, magazines, and playlists across genres.</p>
+        </div>
+        <div class="card">
+          <h3>3. Approval & Email Notification</h3>
+          <p class="muted">Once approved, you’ll receive an email notification before your press materials are shared with our network of outlets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="section">
+      <h2>Our Media Network</h2>
+      <p>We collaborate with respected music outlets, curators, and digital publishers to give your release the exposure it deserves.</p>
+      <div class="logos">
+        <div class="logo-tile">Indiefferential</div>
+        <div class="logo-tile">Rolling Stone Indie</div>
+        <div class="logo-tile">EARMILK</div>
+        <div class="logo-tile">Clash</div>
+        <div class="logo-tile">Notion</div>
+        <div class="logo-tile">OnesToWatch</div>
+        <div class="logo-tile">DIY Mag</div>
+        <div class="logo-tile">Buzz Music</div>
+        <div class="logo-tile">Hype Machine</div>
+        <div class="logo-tile">NME Radar</div>
+        <div class="logo-tile">The Line of Best Fit</div>
+        <div class="logo-tile">Our Blog Network</div>
+      </div>
+    </section>
+
+    <!-- WHY FREE -->
+    <section class="section">
+      <h2>Why BRiNSPOT Is Free</h2>
+      <p>Every artist deserves access to real PR opportunities without paying thousands to agencies. BRiNSPOT is fully supported by partnerships and sponsors, allowing <strong>free submissions for all artists</strong>. We only grow when your story gets seen.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="tiny">© <span id="year"></span> BRiNSPOT.com — Empowering Independent Artists</div>
+      <div class="tiny"><a href="#">Privacy</a> • <a href="#">Terms</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
