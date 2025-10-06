@@ -63,6 +63,11 @@
     }
 
     footer{margin-top:40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+
+    /* Form Input Styles */
+    input, textarea{width:100%;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.15);background:var(--glass);color:white}
+    input:focus, textarea:focus{outline:none;border-color:var(--accent)}
+    form button{margin-top:6px}
   </style>
 </head>
 
@@ -103,10 +108,59 @@
             <div class="muted">Free submission — verified outreach</div>
           </div>
 
-          <!-- Google Form Embed -->
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfxdyK9taTIXRBFS7W5HJ1W5361Mm7RPyje5nCrRNiJAmzYbg/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <!-- FormSubmit Form -->
+          <form target="_blank" 
+                action="https://formsubmit.co/indiefferential@gmail.com" 
+                method="POST" 
+                enctype="multipart/form-data"
+                style="display:flex;flex-direction:column;gap:14px">
 
-          <div style="margin-top:12px" class="tiny">Once your submission is reviewed and approved, you’ll receive an <strong>email confirmation</strong> from our editorial team before it’s sent out to media partners.</div>
+            <!-- Hidden fields -->
+            <input type="hidden" name="_subject" value="New Artist Submission">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://brinspot.com/thank-you">
+
+            <!-- Bio -->
+            <div class="form-group">
+              <label for="artist-bio" style="font-weight:600;">Paste your bio here:</label>
+              <textarea id="artist-bio" name="artist-bio" rows="6" placeholder="Paste your artist bio..." required></textarea>
+            </div>
+
+            <!-- Latest release -->
+            <div class="form-group">
+              <label for="latest-release" style="font-weight:600;">Tell us about your latest release:</label>
+              <textarea id="latest-release" name="latest-release" rows="6" placeholder="Describe your latest single, EP, or album..." required></textarea>
+            </div>
+
+            <!-- Release link -->
+            <div class="form-group">
+              <label for="release-link" style="font-weight:600;">Link to your release (if available):</label>
+              <input type="url" id="release-link" name="release-link" placeholder="https://example.com/your-release">
+            </div>
+
+            <!-- Photos + photographer -->
+            <div class="form-group">
+              <label for="photo-upload" style="font-weight:600;">Upload high-quality photos (include photographer's name):</label>
+              <input type="file" id="photo-upload" name="photo-upload" accept="image/*" multiple required>
+              <input type="text" id="photographer-name" name="photographer-name" placeholder="Photographer's name" style="margin-top:8px;">
+              <small class="muted">Accepted formats: JPG, PNG. Max file size per image may depend on your email provider.</small>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" style="font-weight:600;">Email Address (required):</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              <small class="muted">We’ll use this to confirm your submission and follow up if needed.</small>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn">Submit Form</button>
+          </form>
+
+          <div style="margin-top:12px" class="tiny">
+            Once your submission is reviewed and approved, you’ll receive an <strong>email confirmation</strong> from our editorial team before it’s sent out to media partners.
+          </div>
         </div>
       </aside>
     </section>
