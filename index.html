@@ -109,8 +109,7 @@
           </div>
 
           <!-- FormSubmit Form -->
-          <form target="_blank" 
-                action="https://formsubmit.co/73bc72acab5d56c3039ef0713cd44ae7" 
+          <form action="https://formsubmit.co/73bc72acab5d56c3039ef0713cd44ae7" 
                 method="POST" 
                 enctype="multipart/form-data"
                 style="display:flex;flex-direction:column;gap:14px">
@@ -119,7 +118,7 @@
             <input type="hidden" name="_subject" value="New Artist Submission">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://brinspot.com/thank-you">
+            <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
 
             <!-- Bio -->
             <div class="form-group">
@@ -135,27 +134,29 @@
 
             <!-- Release link -->
             <div class="form-group">
-              <label for="release-link" style="font-weight:600;">Link to your release (if available):</label>
+              <label for="release-link
+                            <label for="release-link" style="font-weight:600;">Link to your release (if available):</label>
               <input type="url" id="release-link" name="release-link" placeholder="https://example.com/your-release">
             </div>
 
-            <!-- Photos + photographer -->
+            <!-- Photo upload + photographer name -->
             <div class="form-group">
               <label for="photo-upload" style="font-weight:600;">Upload high-quality photos (include photographer's name):</label>
               <input type="file" id="photo-upload" name="photo-upload" accept="image/*" multiple required>
-              <input type="text" id="photographer-name" name="photographer-name" placeholder="Photographer's name" style="margin-top:8px;">
-              <small class="muted">Accepted formats: JPG, PNG. Max file size per image may depend on your email provider.</small>
+              <input type="text" id="photographer-name" name="photographer-name" placeholder="Photographer's name" style="margin-top:6px">
+              <small style="color:var(--muted);">Accepted formats: JPG, PNG. Max file size per image depends on FormSubmit limits.</small>
             </div>
 
             <!-- Email -->
             <div class="form-group">
               <label for="email" style="font-weight:600;">Email Address (required):</label>
               <input type="email" id="email" name="email" placeholder="you@example.com" required>
-              <small class="muted">We’ll use this to confirm your submission and follow up if needed.</small>
+              <small style="color:var(--muted);">Include your email if you’d like us to reach out for more details or feature updates.</small>
             </div>
 
-            <!-- Submit -->
-            <button type="submit" class="btn">Submit Form</button>
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+
           </form>
 
           <div style="margin-top:12px" class="tiny">
