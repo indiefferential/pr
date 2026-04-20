@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BRiNSPOT — Free Music PR Submission Network</title>
+  <meta name="description" content="Submit your music, EPK, and interview for free to hundreds of verified magazines, blogs, and media outlets through BRiNSPOT — the artist-first PR platform." />
+  <meta name="author" content="BRiNSPOT" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root{
+      --bg:#0b0f1a; --card:#101622; --muted:#94a3b8; --accent:#3b82f6; --glass: rgba(255,255,255,0.05);
+      --max:1200px; --radius:14px; --light:rgba(255,255,255,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#070a16 0%, #0a0f20 60%), var(--bg); color:#e6eef8; scroll-behavior:smooth;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:40px auto; padding:36px}
+
+    /* HEADER */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#06b6d4);font-weight:800;box-shadow:0 6px 30px rgba(0,0,0,0.6);color:white}
+    nav{display:flex;gap:18px;align-items:center}
+    .btn{background:var(--accent);padding:10px 14px;border-radius:10px;font-weight:600;color:white;border:none;cursor:pointer;transition:0.3s}
+    .btn:hover{opacity:0.9}
+    .tiny{font-size:13px;color:var(--muted)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero-card{
+      position: relative; /* needed for video */
+      overflow: hidden;   /* hide video overflow */
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:32px;
+      border-radius:18px;
+      box-shadow:0 8px 40px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
+    .hero-card video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.4; /* adjust for readability */
+    }
+    .hero-card > * {
+      position: relative;
+      z-index: 1; /* text stays above video */
+    }
+    h1{font-size:36px;margin:0 0 8px}
+    p.lead{color:var(--muted); margin:0 0 18px;font-size:18px;line-height:1.6}
+    .features{display:flex;gap:12px;flex-wrap:wrap}
+    .pill{background:var(--glass);padding:8px 10px;border-radius:10px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* SECTIONS */
+    .section{margin-top:60px}
+    .section h2{font-size:28px;margin-bottom:12px}
+    .section p{color:var(--muted);line-height:1.6}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid var(--light)}
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* MEDIA GRID */
+    .logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-top:16px;text-align:center}
+    .logo-tile{background:var(--glass);padding:14px;border-radius:10px;font-weight:600;color:#cbd5e1;opacity:0.8}
+    .logo-tile:hover{opacity:1;background:var(--light)}
+
+    /* FORM SECTION */
+    .submit{background:linear-gradient(180deg, rgba(59,130,246,0.12), rgba(6,182,212,0.04));padding:18px;border-radius:12px;border:1px solid rgba(59,130,246,0.12)}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .cards{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      .container{padding:18px}
+    }
+
+    footer{margin-top:40px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+
+    /* Form Input Styles */
+    input, textarea{width:100%;border-radius:8px;padding:10px;border:1px solid rgba(255,255,255,0.15);background:var(--glass);color:white}
+    input:focus, textarea:focus{outline:none;border-color:var(--accent)}
+    form button{margin-top:6px}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="logo.png" alt="BRiNSPOT Logo" style="width:100%; height:100%; object-fit:contain; border-radius:10px;">
+        </div>
+        <div>
+          <div style="font-weight:800;font-size:18px;">BRiNSPOT</div>
+          <div class="tiny">Free Music PR • Global Media Outreach</div>
+        </div>
+      </div>
+      <nav>
+        <a class="tiny" href="#how">How It Works</a>
+        <a class="tiny" href="#partners">Media Network</a>
+        <a class="tiny" href="https://brinspot.com/releases">Top Releases</a>
+        <button class="btn" onclick="document.getElementById('interviewForm').scrollIntoView({behavior: 'smooth'});">Submit your music</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <!-- Background video -->
+        <video autoplay muted loop playsinline>
+          <source src="your-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <h1>Submit Once. Get Seen Everywhere.</h1>
+        <p class="lead">
+          BRiNSPOT is a free artist PR platform that delivers your EPK, bio, and latest release to verified music editors, magazines, playlists, and online media — including <strong>EARMILK, New Music Indie, Indiefferential Magazine, Notion, OnesToWatch</strong> and many more.
+        </p>
+        <div class="features">
+          <div class="pill">Free PR Submission</div>
+          <div class="pill">Global Media Network</div>
+          <div class="pill">Real Editors & Curators</div>
+          <div class="pill">Print & Digital Features</div>
+        </div>
+      </div>
+
+      <aside id="interviewForm">
+        <div class="submit hero-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div style="font-weight:800">Submit Your EPK & Links</div>
+            <div class="muted">Free submission — verified outreach</div>
+          </div>
+
+          <!-- ADDED BUTTON -->
+          <a href="mailto:brinspot@outlook.com" class="btn" style="display:block;text-align:center;margin:12px 0;">
+            Send us your music
+          </a>
+
+           <!-- FormSubmit Form -->
+          <form action="https://formsubmit.co/3370d19485d9614d7c62748769f491d3" 
+                method="POST" 
+                enctype="multipart/form-data"
+                style="display:flex;flex-direction:column;gap:14px">
+
+            <!-- Hidden fields -->
+            <input type="hidden" name="_subject" value="New Artist Submission">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://brinspot.com/thank-you.html">
+
+            <!-- Bio -->
+            <div class="form-group">
+              <label for="artist-bio" style="font-weight:600;">Paste your bio here:</label>
+              <textarea id="artist-bio" name="artist-bio" rows="6" placeholder="Paste your artist bio..." required></textarea>
+            </div>
+
+            <!-- Latest release -->
+            <div class="form-group">
+              <label for="latest-release" style="font-weight:600;">Tell us about your latest release:</label>
+              <textarea id="latest-release" name="latest-release" rows="6" placeholder="Describe your latest single, EP, or album..." required></textarea>
+            </div>
+
+            <!-- Release link -->
+            <div class="form-group">
+              <label for="release-link" style="font-weight:600;">Link to your release (if available):</label>
+              <input type="url" id="release-link" name="release-link" placeholder="https://example.com/your-release">
+            </div>
+
+            <!-- Photo upload + photographer name -->
+            <div class="form-group">
+              <label for="photo-upload" style="font-weight:600;">Upload high-quality photos (include photographer's name):</label>
+              <input type="file" id="photo-upload" name="photo-upload" accept="image/*" multiple required>
+              <input type="text" id="photographer-name" name="photographer-name" placeholder="Photographer's name" style="margin-top:6px">
+              <small style="color:var(--muted);">Accepted formats: JPG, PNG. Max file size per image depends on FormSubmit limits.</small>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email" style="font-weight:600;">Email Address (required):</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              <small style="color:var(--muted);">Include your email if you’d like us to reach out for more details or feature updates.</small>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+
+          </form>
+
+          <!-- Instagram Follow Button -->
+          <div style="margin-top:12px; margin-bottom:12px;">
+            <a href="https://www.instagram.com/brinspot/" target="_blank" 
+               style="display:inline-block; background:#E1306C; color:white; padding:10px 16px; border-radius:10px; font-weight:600; text-decoration:none; transition:0.3s;">
+              Follow us on Instagram
+            </a>
+            <div class="tiny" style="margin-top:6px; color:var(--muted);">
+              Follow us on our new Instagram page so we can tag you on every promo post.
+            </div>
+          </div>
+
+          <!-- Confirmation note -->
+          <div style="margin-top:12px" class="tiny">
+            Once your submission is reviewed and approved, you’ll receive an <strong>email confirmation</strong> from our editorial team before it’s sent out to media partners.
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section">
+      <h2>How It Works</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>1. Submit for Free</h3>
+          <p class="muted">Fill out one simple form with your bio, release details, and EPK. No signup or fees required.</p>
+        </div>
+        <div class="card">
+          <h3>2. We Pitch to Media</h3>
+          <p class="muted">Our PR editors send your story to hundreds of active journalists, blogs, magazines, and playlists across genres.</p>
+        </div>
+        <div class="card">
+          <h3>3. Approval & Email Notification</h3>
+          <p class="muted">Once approved, you’ll receive an email notification before your press materials are shared by one or more of our network of outlets.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="section">
+      <h2>Our Media Network</h2>
+      <p>We collaborate with respected music outlets, curators, and digital publishers to give your release the exposure it deserves.</p>
+      <div class="logos">
+        <div class="logo-tile">Daily Music Roll</div>
+        <div class="logo-tile">EARMILK</div>
+        <div class="logo-tile">SRCZ Magazine</div>
+        <div class="logo-tile">Remixd Magazine</div>
+        <div class="logo-tile">Music News Monthly</div>
+        <div class="logo-tile">Indiefferential</div>
+        <div class="logo-tile">Crossover Music Magazine</div>
+        <div class="logo-tile">Unpublished Zine</div>
+        <div class="logo-tile">Notion</div>
+        <div class="logo-tile">OnesToWatch</div>
+        <div class="logo-tile">DIY Mag</div>      
+        <div class="logo-tile">Hype Machine</div>
+      </div>
+    </section>
+
+    <!-- WHY FREE -->
+    <section class="section">
+      <h2>Why BRiNSPOT Is Free</h2>
+      <p>Every artist deserves access to real PR opportunities without paying thousands to agencies. BRiNSPOT is fully supported by donations and sponsors, allowing <strong>free submissions for all artists</strong>. We only grow when your story gets seen.</p>
+
+      <p>BRiNSPOT was created to help fellow artists get the exposure they deserve. You can support our mission by joining our <a href="https://www.patreon.com/brinspot" target="_blank"><strong>Patreon</a> — for less than $3/month, your release will be featured on our <strong>Top Artists</strong> page.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="tiny">© <span id="year"></span> BRiNSPOT.com — Empowering Independent Artists</div>
+      <div class="tiny"><a href="#">Privacy</a> • <a href="#">Terms</a></div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
