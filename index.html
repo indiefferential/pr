@@ -611,55 +611,23 @@
 
 
           <!-- =========================
-               FORMSUBMIT FORM
+               WEB3FORMS FORM
           ========================= -->
 
           <form
-            action="https://formsubmit.co/brinspot@outlook.com"
+            action="https://api.web3forms.com/submit"
             method="POST"
             enctype="multipart/form-data"
             style="display:flex;flex-direction:column;gap:14px;">
 
-
-            <!-- FormSubmit settings -->
-
-            <input
-              type="hidden"
-              name="_subject"
-              value="New BRiNSPOT Artist Submission">
-
-            <input
-              type="hidden"
-              name="_captcha"
-              value="false">
-
-            <input
-              type="hidden"
-              name="_template"
-              value="table">
-
-            <!-- Guards against the form being opened as a local file -->
-            <input
-              type="hidden"
-              name="_url"
-              value="https://brinspot.com/">
-
-            <!-- Redirect after successful submission -->
-
-            <input
-              type="hidden"
-              name="_next"
-              value="https://brinspot.com/thank-you.html">
-
+            <!-- Web3Forms settings -->
+            <input type="hidden" name="access_key" value="5d5a86ea-ec22-47c8-854f-7753b3e85a8a">
+            <input type="hidden" name="subject" value="New BRiNSPOT Artist Submission">
+            <input type="hidden" name="from_name" value="BRiNSPOT Website">
+            <input type="hidden" name="redirect" value="https://brinspot.com/thank-you.html">
 
             <!-- Honeypot anti-spam field -->
-
-            <input
-              type="text"
-              name="_honey"
-              style="display:none"
-              tabindex="-1"
-              autocomplete="off">
+            <input type="text" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
 
             <!-- =========================
