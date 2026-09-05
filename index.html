@@ -334,21 +334,6 @@
       box-shadow: 0 0 0 2px rgba(59,130,246,0.12);
     }
 
-    input[type="file"] {
-      padding: 9px;
-      cursor: pointer;
-    }
-
-    input[type="file"]::file-selector-button {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 7px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
     form button {
       margin-top: 6px;
       width: 100%;
@@ -617,7 +602,6 @@
           <form
             action="https://api.web3forms.com/submit"
             method="POST"
-            enctype="multipart/form-data"
             style="display:flex;flex-direction:column;gap:14px;">
 
             <!-- Web3Forms settings -->
@@ -730,23 +714,21 @@
 
 
             <!-- =========================
-                 PHOTO UPLOAD
+                 PHOTO LINK (replaces file upload)
             ========================= -->
 
             <div class="form-group">
 
-              <label for="photo-upload">
-                Upload high-quality photos:
+              <label for="photo-link">
+                Link to high-quality photos:
               </label>
 
               <input
-                type="file"
-                id="photo-upload"
-                name="photos"
-                accept="image/jpeg,image/png"
-                multiple
+                type="url"
+                id="photo-link"
+                name="photo_link"
+                placeholder="https://drive.google.com/... or Dropbox/WeTransfer link"
                 required>
-
 
               <input
                 type="text"
@@ -754,10 +736,9 @@
                 name="photographer_name"
                 placeholder="Photographer's name">
 
-
               <small class="tiny">
-                Accepted formats: JPG and PNG.
-                Maximum combined upload size: 10 MB.
+                Upload your photos to Google Drive, Dropbox, or WeTransfer
+                and paste a shareable link here.
               </small>
 
             </div>
@@ -892,7 +873,7 @@
 
           <p class="muted">
             Fill out one simple form with your artist information,
-            bio, release details, social links and photos.
+            bio, release details, social links and photo link.
             No signup or fees required.
           </p>
 
