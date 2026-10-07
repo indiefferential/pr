@@ -53,6 +53,19 @@
 
     body {
       overflow-x: hidden;
+      background: transparent;
+    }
+
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.35;
+      pointer-events: none;
     }
 
     a {
@@ -426,6 +439,19 @@
 
 <body>
 
+  <!-- Full-page background video -->
+  <video
+    class="bg-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    aria-hidden="true">
+    <source src="your-video.mp4" type="video/mp4">
+  </video>
+
+
   <div class="container">
 
     <!-- HEADER -->
@@ -489,24 +515,7 @@
 
       <div class="hero-card">
 
-        <!-- Background video -->
-
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-hidden="true">
-
-          <source
-            src="your-video.mp4"
-            type="video/mp4">
-
-        </video>
-
-
-        <h1>
+<h1>
           Submit Once. Get Seen Everywhere.
         </h1>
 
